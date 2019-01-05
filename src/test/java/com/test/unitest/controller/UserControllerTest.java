@@ -1,6 +1,12 @@
 package com.test.unitest.controller;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -11,6 +17,7 @@ import java.util.List;
 import org.dozer.DozerBeanMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -55,6 +62,7 @@ public class UserControllerTest {
 		Iterator iterator = objs.iterator();
 		while (iterator.hasNext()) {
 			UserBean userBean = new DozerBeanMapper().map(iterator.next(), UserBean.class);
+			
 			System.out.println(" id              " + userBean.getId());
 			System.out.println(" name            " + userBean.getName());
 			System.out.println(" age             " + userBean.getAge());
@@ -63,8 +71,26 @@ public class UserControllerTest {
 			System.out.println("  city             " + aBean.getCity());
 			System.out.println(" address1          " + aBean.getAddress1());
 			System.out.println("   zipCode         " + aBean.getZipCode());
+			//Checks if an object isn't null.
+			assertNotNull(userBean.getId());
+			//Checks if two primitive types or objects are equal.
+			assertEquals(userBean.getId(),userBean.getId());
+			//Checks if input condition is true.
+			assertTrue(Boolean.TRUE);
+			//Checks if input condition is false.
+			assertFalse(Boolean.FALSE);
+			//Checks if an object is null.
+			assertNull(null);
+			//Checks if two object references do not point to the same object in memory.
+			assertNotSame(userBean.getAge(),userBean.getId());
 
 		}
+		
+			//Checks whether two arrays are equal to each other.
+		int ages[]= {1,2,3,4,5,6,7};
+		assertArrayEquals(ages,ages);
+		// verify the json object 
+		//JSONAssert.assertEquals(expected, actual, compareMode);
 
 		/*
 		 * ******* Another Example with Key value Pair**************
