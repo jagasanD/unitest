@@ -1,7 +1,7 @@
 # unitest
 Real Time example for Unit testing in spring project 
 
-Use external Maven for Dozer bean mapping which is used for convet on POJO to Another POJO class 
+Use external Maven for Dozer bean mapping which is used for convet one POJO to Another POJO class 
 More details click below link
 
 https://howtodoinjava.com/automation/dozer-bean-mapping-examples/
