@@ -24,7 +24,9 @@ import com.test.bean.ResponeBean;
 import com.test.bean.UserBean;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+//@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@ActiveProfiles("test")
+//@TestPropertySource("classpath:test/test.properties")
 public class AppUserInteTestWithRestTem {
 
 	@Autowired
