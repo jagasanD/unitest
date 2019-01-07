@@ -15,3 +15,10 @@ Maven dependency for Dozer Bean Mapping
 			<artifactId>dozer</artifactId>
 			<version>5.5.1</version>
 		</dependency>
+
+
+Jackson - ObjectMapper Class
+more details click below link 
+https://www.tutorialspoint.com/jackson/jackson_objectmapper.htm
+
+
